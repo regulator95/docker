@@ -1,0 +1,16 @@
+version: '2'
+services:
+  db:
+    container_name: mysql
+    build: ./mysql
+    ports:
+     - "3306:3306"
+    environment:
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: DBAdmin1
+  web:
+    container_name: httpd
+    build: ./httpd
+    ports:
+     - "80:80"
